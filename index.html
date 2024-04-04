@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden; /* Hide overflow to prevent scrollbars */
+    }
+
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .video-background video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1; /* Ensure content appears above the video */
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
+
+    .content h1 {
+        font-size: 5rem;
+    }
+    .button {
+       
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 20px 40px;
+        
+        transition: background-color 0.3s ease;
+        margin-bottom: 5px; /* Adjust the spacing between buttons */
+
+    }
+
+
+    .button img {
+        width: 100%;
+        height: 100%;
+    }
+    h1 {
+    font-family: 'Pacifico', cursive;
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: #FFD700; 
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 80px #FFD700, 0 0 160px #FFD700, 0 0 320px #FFD700, 0 0 640px #FFD700;
+    animation: glowing 2s linear infinite;
+    text-align: center;
+  }
+
+  @keyframes glowing {
+    0% {
+      color: #FFD700; 
+      text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 80px #FFD700, 0 0 160px #FFD700, 0 0 320px #FFD700, 0 0 640px #FFD700;
+    }
+    50% {
+      color: #ffd70080; 
+      text-shadow: none;
+    }
+    100% {
+      color: #FFD700; 
+      text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 80px #FFD700, 0 0 160px #FFD700, 0 0 320px #FFD700, 0 0 640px #FFD700;
+    }
+  }
+
+
+
+
+
+</style>
+
+<body class="bg-gradient-to-r from-black to-gray-500">
+    <header class="pt-24 font-bold text-5xl">
+
+        <h1>MULTI-SEARCH-ENGINE</h1>
+        
+       </header>
+    
+      
+    <div class="h-24 w-full"></div>
+    <!-- middle -->
+    <!-- <main>
+      <div class="text-5xl font-mono font-bold flex justify-center items-center text-blue-950 animate-pulse ">How Can I Help You?
+      <div>  <input type="search" id="gsearch" name="gsearch" placeholder="Tell us what you need to know..."></div>
+      </div>
+    </main> -->
+       
+    
+     <!-- searching -->
+     <section class="flex justify-center items-center gap-44 p-8 pt-66">
+      <div class="h-30 w-40  flex    justify-center items-center  ">
+     
+        <button class="button"><img src="Assets/1.jpeg" class="h-11 w-11" id="logo"></button> 
+      </div>
+      
+        <div class="h-30 w-40    flex   justify-center items-center">
+            <button class="button" id="gemini"><img src="Assets/2.jpeg" class="h-11 w-11 "></button> 
+        </div>
+        
+       <div class="h-30 w-40    flex justify-center items-center">
+     <button class="button" onclick="searchWikipedia()"><img src="Assets/3.jpeg" class="h-11 w-11"></button> 
+      
+       </div>
+     </section>
+     
+
+     <script>
+        let google = document.getElementById('logo');
+        google.addEventListener("click", function(){
+              window.location.href = "google_search/index.html";
+       })
+
+        let gemini = document.getElementById('gemini');
+        gemini.addEventListener("click" , function(){
+         window.location.href = "Gemini_clone/index.html";
+        })
+
+//       document.getElementById("google").addEventListener("click", function() {
+//     var query = document.getElementById("gsearch").value;
+//     if (query.trim() !== "") {
+//         // Redirect to Google search results page with the query
+//         window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+//     }
+// });
+
+
+    
+
+
+     </script>
+      <script>
+        function searchWikipedia() {
+            window.location.href = "https://en.wikipedia.org/wiki/Main_Page";
+        }
+    </script>
+</body>
+</html>
